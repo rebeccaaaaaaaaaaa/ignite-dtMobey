@@ -5,7 +5,7 @@ import closeImg from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import { api } from "../../services/api";
-import { TransactionContext } from "../../TransactionContext";
+import { useTransactions } from "../../hooks/useTransactions";
 
 interface NewTransactionModalProps {
   isOpen: boolean;
@@ -39,7 +39,7 @@ export function NewTransactionModal({
     
   }
 
-  const {createTransaction} = useContext(TransactionContext);
+  const {createTransaction} = useTransactions();
 
   return (
     <Modal
